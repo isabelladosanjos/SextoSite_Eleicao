@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Eleições 2022</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/bootstrap.bundle.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link href="css/style.css" rel="stylesheet">
+
+	<link rel="icon" href="imagens/bandeirabrasil.jpg" width="100" height="50">
+
+
+</head>
+
+<body>
+
+
+	<nav class="navbar navbar-expand-lg bg-light">
+		<div class="container-fluid">
+			<img src="imagens/brasil.png" height="60px" width="60px" height="100" loading="lazy" />&nbsp; &nbsp;
+			<a class="navbar-brand">ELEIÇÕES 2022 </a> &nbsp;
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="index.html">Ínicio</a>
+					</li>&nbsp; &nbsp;
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="votar.html">Votação</a>
+					</li>&nbsp; &nbsp;
+					<li class="nav-item">
+						<a class="nav-link" href="candidatos.html">Candidatos</a>
+					</li> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					&nbsp;
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>
+			</div>
+		</div>
+	</nav>
+
+	<script>
+		bo = 0
+		lu = 0
+		ci = 0
+		si = 0
+		fe = 0
+		so = 0
+		branco = 0
+		nulos = 0
+		nvotos = 0
+		voto = 0
+		resultado = 0
+
+		nvotos = prompt("Número de pessoas na sessão:")
+		for (i = 1; i <= nvotos; i++) {
+			voto = prompt("[22] Bolsonaro  \n[13] Lula  \n[12] Ciro Gomes  \n[15] Simone Tebet  \n[30] Felipe D'Ávila  \n[44] Soraya Thronicke")
+			if (voto == 22) {
+				bo++
+			}
+
+			else if (voto == 13) {
+				lu++
+			}
+
+			else if (voto == 12) {
+				ci++
+			}
+			else if (voto == 15) {
+				si++
+			}
+
+			else if (voto == 30) {
+				fe++
+			}
+
+			else if (voto == 44) {
+				so++
+			}
+
+			else if (voto == "") {
+				branco++
+			}
+
+			else {
+				nulos++
+			}
+		}
+
+		resultado = nvotos - branco - nulos
+
+		alert("Bolsonaro = " + bo)
+		alert("Lula = " + lu)
+		alert("Ciro Gomes = " + ci)
+		alert("Simone Tebet = " + si)
+		alert("Felipe D'Ávila = " + fe)
+		alert("Soraya Thronicke = " + so)
+		alert("Votos Brancos = " + branco)
+		alert("Votos Nulos = " + nulos)
+
+	</script>
+
+	<center>
+
+		<img src="imagens/votar.jpeg" height="800" width="1000" loading="lazy" />
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						Resultado
+					</button>
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="exampleModalLabel">Resultado das Eleições 2022!
+									</h1>
+
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<p>
+										<script>
+											if (bo > lu && bo > ci && bo > si && bo > fe && bo > so) {
+												document.write("Bolsonaro venceu a eleição com " + bo + " votos.")
+											} else
+
+												if (lu > bo && lu > ci && lu > si && lu > fe && lu > so) {
+													document.write("Lula venceu a eleição com " + lu + " votos.ㅤㅤ")
+												} else
+
+													if (ci > bo && ci > lu && ci > si && ci > fe && ci > so) {
+														document.write("Ciro Gomes venceu a eleição com " + ci + " votos.")
+													} else
+
+														if (si > bo && si > ci && si > lu && si > fe && si > so) {
+															document.write("Simone Tebet venceu a eleição com " + si + " votos.")
+														} else
+
+															if (fe > bo && fe > ci && fe > si && fe > lu && fe > so) {
+																document.write("Felipe D'Ávila venceu a eleição com " + fe + " votos.")
+															} else
+
+																if (so > bo && so > ci && so > si && so > fe && so > lu) {
+																	document.write("Soraya Thronicke venceu a eleição com " + so + " votos.")
+																} else
+
+																	if (nulos > bo && nulos > lu && nulos > ci && nulos > si && nulos > fe && nulos > so) {
+																		document.write("Votos válidos não foram contabilizados.")
+																	} else
+																		if (branco > bo && branco > lu && branco > ci && branco > si && branco > fe && branco > so) {
+																			document.write("Votos válidos não foram contabilizados.")
+																		} else
+																			if (bo == lu || bo == ci || bo == si || bo == fe || bo == so) {
+																				document.write("Houve um empate. Vote novamente.")
+																			} else
+																				if (lu == bo || lu == ci || lu == si || lu == fe || lu == so) {
+																					document.write("Houve um empate. Vote novamente.")
+																				} else
+																					if (ci == bo || ci == lu || ci == si || ci == fe || ci == so) {
+																						document.write("Houve um empate. Vote novamente.")
+																					} else
+																						if (si == bo || si == lu || si == ci || si == fe || si == so) {
+																							document.write("Houve um empate. Vote novamente.")
+																						} else
+																							if (ke == bo || ke == lu || ke == si || ke == ci || fe == so) {
+																								document.write("Houve um empate. Vote novamente.")
+																							} else
+																								if (so == bo || so == lu || so == si || so == fe || so == ci) {
+																									document.write("Houve um empate. Vote novamente.")
+																								}
+
+										</script>
+
+										<script>
+											if (bo > lu && bo > ci && bo > si && bo > fe && bo > so) document.write('<img src="imagens/bolsonaro.jpg" width="200"')
+											else if (lu > bo && lu > ci && lu > si && lu > fe && lu > so) document.write('<img src="imagens/lula.jpg" width="200"')
+											else if (ci > bo && ci > lu && ci > si && ci > fe && ci > so) document.write('<img src="imagens/cirogomes.jpg" width="200"')
+											else if (si > bo && si > ci && si > lu && si > fe && si > so) document.write('<img src="imagens/simonetebet.jpg" width="200"')
+											else if (fe > bo && fe > ci && fe > si && fe > lu && fe > so) document.write('<img src="imagens/felipe.jpg" width="200"')
+											else if (so > bo && so > ci && so > si && so > fe && so > lu) document.write('<img src="imagens/soraya.jpg" width="200"')
+											else if (branco || nulos > bo && branco || nulos > lu && branco || nulos > ci && branco || nulos > si && branco || nulos > fe && branco || nulos > so) document.write('<img src="imagens/erro.jpg" width="350"')
+											else if (voto == "") document.write('<img src="imagens/erro.jpg" width="350"')
+											else if (so == bo || so == lu || so == si || so == fe || so == ci) document.write('<img src="imagens/triste.jpg" width="350"')
+										</script>
+
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Confirmar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+	</center>
+
+
+</body>
+
+</html>
